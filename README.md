@@ -30,6 +30,7 @@ This project was developed as part of the [Route Academy](https://www.linkedin.c
 
 - 📝 **User Registration** with name, email, and password
 - 🔒 **Secure Login** with email and password
+- 🛡️ **Password Hashing** with PBKDF2 and random salts for enhanced security
 - ✅ **Real-time Input Validation** with meaningful error messages
 - 🔑 **Session Management** with localStorage
 - 🚪 **Protected Routes** for authenticated users only
@@ -48,6 +49,12 @@ This project was developed as part of the [Route Academy](https://www.linkedin.c
 [![SweetAlert2](https://img.shields.io/badge/SweetAlert2-8A2BE2?style=for-the-badge&logo=javascript&logoColor=white&style=plastic)](https://sweetalert2.github.io/)
 [![Font Awesome](https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=font-awesome&logoColor=white&style=plastic)](https://fontawesome.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white&style=plastic)](https://getbootstrap.com/)
+[![CryptoJS](https://img.shields.io/badge/CryptoJS-333333?style=for-the-badge&logo=javascript&logoColor=white&style=plastic)](https://github.com/brix/crypto-js)
+
+### 💻 Development Tools
+[![VSCode](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white&style=plastic)](https://code.visualstudio.com/)
+[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&style=plastic)](https://git-scm.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&style=plastic)](https://github.com/)
 
 </div>
 
@@ -94,7 +101,7 @@ The JavaScript code follows an object-oriented pattern with separate classes for
 - **UserManager**: Core functionality for user authentication and management
 - **Validator**: Form validation and error messages
 - **UI**: UI updates and interactions
-- **Utilities**: Helper functions for common tasks
+- **Utilities**: Helper functions for common tasks, including secure password hashing implementation
 
 ## ✅ Requirements Fulfilled
 
@@ -108,6 +115,7 @@ This implementation meets all the requirements specified in the [project require
 | Logout | ✅ Clears session and redirects to login |
 | Data Persistence | ✅ Uses localStorage for user data and session management |
 | Input Validation | ✅ Real-time validation with meaningful error messages |
+| Security | ✅ PBKDF2 password hashing with random salts for data protection |
 | Clean UI/UX | ✅ Modern design with smooth transitions and feedback |
 
 ---

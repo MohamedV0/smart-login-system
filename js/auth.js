@@ -73,7 +73,7 @@ class UserManager {
             id: this.generateUserId(),
             name,
             email,
-            password,
+            password: Utilities.hashPassword(password),
             createdAt: new Date().toISOString()
         };
 
@@ -91,9 +91,9 @@ class UserManager {
     }
 
     login(email, password) {
-        const user = this.users.find(u => u.email === email && u.password === password);
+        const user = this.users.find(u => u.email === email);
 
-        if (!user) {
+        if (!user || !Utilities.verifyPassword(password, user.password)) {
             return {
                 success: false,
                 message: 'Incorrect email or password'
@@ -401,6 +401,27 @@ class Utilities {
         };
 
         return date.toLocaleString(undefined, options);
+    }
+
+    static hashPassword(password) {
+        const salt = CryptoJS.lib.WordArray.random(16).toString();
+        const hash = CryptoJS.PBKDF2(password, salt, {
+            keySize: 512 / 32,
+            iterations: 1000
+        }).toString();
+        
+        return `${salt}:${hash}`;
+    }
+
+    static verifyPassword(password, storedHash) {
+        const [salt, originalHash] = storedHash.split(':');
+        
+        const hash = CryptoJS.PBKDF2(password, salt, {
+            keySize: 512 / 32,
+            iterations: 1000
+        }).toString();
+        
+        return hash === originalHash;
     }
 }
 
