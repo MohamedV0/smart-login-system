@@ -14,6 +14,10 @@ This project was developed as part of the [Route Academy](https://www.linkedin.c
 
 <div align="center">
   <img src="docs/ui-screenshots/Hero.png" alt="Smart Login System Interface" width="800">
+  
+  <a href="docs/ui-screenshots" style="display: inline-block; margin-top: 15px; padding: 8px 16px; background: linear-gradient(45deg, #6366f1, #d946ef); color: white; text-decoration: none; border-radius: 6px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+    <span style="vertical-align: middle; font-size: 0.9em;">📸 View All Screenshots</span>
+  </a>
 </div>
 
 ## ✨ Features
