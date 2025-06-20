@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Login System - A secure authentication system">
+    <title>Smart Login System</title>
+    <link rel="icon" href="images/auth.png" type="image/png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sweetalert-custom.css">
+  </head>
+  <body>
+    <main class="app-container">
+      <!-- Auth Pages (Login/Signup) -->
+      <section id="authPage" class="page d-none">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="auth-card">
+                <header class="auth-header text-center mb-4">
+                  <div class="logo-container">
+                    <img src="images/auth.png" alt="Smart Login" class="auth-logo mb-3">
+                    <div class="logo-glow"></div>
+                  </div>
+                  <h1 class="auth-title">Smart Login System</h1>
+                </header>
+                
+                <div class="auth-tabs" role="tablist">
+                  <button id="loginTab" class="auth-tab active" role="tab" aria-selected="true" aria-controls="loginContent">
+                    <i class="fas fa-sign-in-alt me-2" aria-hidden="true"></i>Sign In
+                  </button>
+                  <button id="signupTab" class="auth-tab" role="tab" aria-selected="false" aria-controls="signupContent">
+                    <i class="fas fa-user-plus me-2" aria-hidden="true"></i>Sign Up
+                  </button>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="loginContent" class="auth-content active" role="tabpanel" aria-labelledby="loginTab">
+                  <form id="loginForm" class="needs-validation" novalidate>
+                    <div class="form-group mb-3">
+                      <div class="input-with-icon">
+                        <i class="fas fa-envelope icon-left" aria-hidden="true"></i>
+                        <input type="email" class="form-control custom-input" id="loginEmail" placeholder="Email address" required aria-required="true">
+                      </div>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                      <div class="input-with-icon">
+                        <i class="fas fa-lock icon-left" aria-hidden="true"></i>
+                        <input type="password" class="form-control custom-input" id="loginPassword" placeholder="Password" required aria-required="true">
+                      </div>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit w-100 py-2">
+                      <span class="btn-text">Login</span>
+                      <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </div>
+                
+                <!-- Signup Form -->
+                <div id="signupContent" class="auth-content" role="tabpanel" aria-labelledby="signupTab">
+                  <form id="signupForm" class="needs-validation" novalidate>
+                    <div class="form-group mb-3">
+                      <div class="input-with-icon">
+                        <i class="fas fa-user icon-left" aria-hidden="true"></i>
+                        <input type="text" class="form-control custom-input" id="signupName" placeholder="Full Name" required aria-required="true">
+                      </div>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                      <div class="input-with-icon">
+                        <i class="fas fa-envelope icon-left" aria-hidden="true"></i>
+                        <input type="email" class="form-control custom-input" id="signupEmail" placeholder="Email address" required aria-required="true">
+                      </div>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                      <div class="input-with-icon">
+                        <i class="fas fa-lock icon-left" aria-hidden="true"></i>
+                        <input type="password" class="form-control custom-input" id="signupPassword" placeholder="Password" required aria-required="true">
+                      </div>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit w-100 py-2">
+                      <span class="btn-text">Create Account</span>
+                      <i class="fas fa-user-plus ms-2" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Home Page -->
+      <section id="homePage" class="page d-none">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="home-card">
+                <header class="home-header">
+                  <div class="user-avatar">
+                    <i class="fas fa-user-circle" aria-hidden="true"></i>
+                  </div>
+                  <h2 class="welcome-text">Welcome <span id="userName" class="user-name"></span></h2>
+                  <p class="success-message">You have successfully logged into your account</p>
+                </header>
+                
+                <div class="home-content">
+                  <div class="account-info">
+                    <div class="info-item">
+                      <i class="fas fa-envelope info-icon" aria-hidden="true"></i>
+                      <div class="info-details">
+                        <span class="info-label">Email</span>
+                        <span id="userEmail" class="info-value"></span>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-clock info-icon" aria-hidden="true"></i>
+                      <div class="info-details">
+                        <span class="info-label">Login Time</span>
+                        <span id="loginTime" class="info-value"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <footer class="mt-4">
+                  <button id="logoutBtn" class="btn btn-danger w-100 py-2">
+                    <i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>Logout
+                  </button>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetalert-config.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
