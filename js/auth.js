@@ -211,7 +211,6 @@ class UserManager {
             authTabs.classList.add('signup-active');
         }
 
-        UI.hideAlert();
     }
 
     handleSignup(e) {
